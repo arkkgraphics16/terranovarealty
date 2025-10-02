@@ -39,14 +39,6 @@ const Header = () => {
             ))}
           </ul>
         </nav>
-        <div className="header__cta-group">
-          <a className="btn btn--ghost" href="https://m.me/TerraNovaRealtyPH" target="_blank" rel="noreferrer">
-            Messenger
-          </a>
-          <a className="btn" href="#contact">
-            Book a Consultation
-          </a>
-        </div>
         <button
           className={`header__menu ${open ? 'is-open' : ''}`}
           type="button"
