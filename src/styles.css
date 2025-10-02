@@ -630,12 +630,78 @@ main {
 
 .cta-sticky {
   position: fixed;
-  right: 1.5rem;
-  bottom: 1.5rem;
+  left: 50%;
+  top: 6.25rem;
+  transform: translateX(-50%);
+  width: min(720px, calc(100% - 3rem));
+  background: var(--surface-base);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+  padding: 1.5rem 3.25rem 1.5rem 1.75rem;
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  z-index: 95;
+}
+
+.cta-sticky__body {
+  position: relative;
+  flex: 1;
+  display: grid;
+  gap: 0.65rem;
+}
+
+.cta-sticky__text {
+  margin: 0;
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: var(--color-navy);
+}
+
+.cta-sticky__support {
+  margin: 0;
+  color: var(--color-muted);
+}
+
+.cta-sticky__actions {
+  display: flex;
+  flex-wrap: wrap;
   gap: 0.75rem;
-  z-index: 90;
+}
+
+.cta-sticky__actions .btn {
+  flex: 1 1 200px;
+  justify-content: center;
+}
+
+.cta-sticky__dismiss {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 999px;
+  border: none;
+  background: transparent;
+  color: var(--color-muted);
+  font-size: 1.5rem;
+  line-height: 1;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.cta-sticky__dismiss:hover,
+.cta-sticky__dismiss:focus-visible {
+  background: rgba(26, 46, 79, 0.08);
+  color: var(--color-navy);
+}
+
+.cta-sticky__dismiss:focus-visible {
+  outline: 2px solid var(--color-navy);
+  outline-offset: 2px;
 }
 
 .cookie-banner {
@@ -741,8 +807,13 @@ main {
   }
 
   .cta-sticky {
-    right: 1rem;
-    bottom: calc(1rem + clamp(6.5rem, 18vw, 9rem));
+    top: 5.75rem;
+    width: min(100% - 2.5rem, 600px);
+    padding: 1.35rem 1.75rem 1.35rem 1.5rem;
+  }
+
+  .cta-sticky__body {
+    gap: 0.75rem;
   }
 
   .cookie-banner {
@@ -814,18 +885,17 @@ main {
   }
 
   .cta-sticky {
-    left: 50%;
-    right: auto;
-    transform: translateX(-50%);
-    bottom: calc(1rem + clamp(6rem, 24vw, 8.5rem));
-    width: min(100% - 2rem, 320px);
-    padding: 0.75rem;
-    background: rgba(245, 245, 240, 0.96);
-    border-radius: var(--radius-md);
-    box-shadow: var(--shadow-soft);
+    top: 5.5rem;
+    width: calc(100% - 1.5rem);
+    padding: 1.25rem 1.25rem 1.35rem;
+    gap: 1rem;
   }
 
-  .cta-sticky .btn {
+  .cta-sticky__actions {
+    flex-direction: column;
+  }
+
+  .cta-sticky__actions .btn {
     width: 100%;
   }
 
