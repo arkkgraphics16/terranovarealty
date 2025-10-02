@@ -652,6 +652,7 @@ main {
   align-items: center;
   gap: 1.5rem;
   max-width: 640px;
+  z-index: 95;
 }
 
 .cookie-banner p {
@@ -666,6 +667,8 @@ main {
 @media (max-width: 960px) {
   .header__inner {
     flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 1rem;
   }
 
   .header__nav {
@@ -689,33 +692,63 @@ main {
   }
 
   .header__cta-group {
-    margin-left: auto;
+    order: 2;
+    margin-left: 0;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.75rem;
+    margin-top: 0.5rem;
+  }
+
+  .header__cta-group .btn {
+    width: 100%;
+    justify-content: center;
   }
 
   .header__menu {
     display: flex;
+    margin-left: auto;
   }
 
   .hero {
     grid-template-columns: 1fr;
     padding-top: 5rem;
+    gap: 2.5rem;
   }
 
   .hero__stats {
     grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1rem;
+  }
+
+  .card-grid {
+    gap: 1.5rem;
   }
 
   .sustainability {
     grid-template-columns: 1fr;
+    padding: 2.5rem;
   }
 
   .contact {
     grid-template-columns: 1fr;
   }
 
+  .contact__details,
+  .contact__form {
+    padding: 2.25rem;
+  }
+
   .cta-sticky {
     right: 1rem;
+    bottom: calc(1rem + clamp(6.5rem, 18vw, 9rem));
+  }
+
+  .cookie-banner {
     bottom: 1rem;
+    width: min(100% - 2rem, 420px);
+    padding: 1.5rem;
   }
 }
 
@@ -730,6 +763,7 @@ main {
 
   .hero {
     padding: 4rem 1rem 0;
+    gap: 2rem;
   }
 
   .section {
@@ -740,8 +774,17 @@ main {
     padding-block: 3rem;
   }
 
-  .card-grid,
-  .sustainability,
+  .card-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .header__cta-group {
+    grid-template-columns: 1fr;
+  }
+
+  .info-card,
+  .property-card,
   .contact__details,
   .contact__form,
   .privacy,
@@ -749,9 +792,49 @@ main {
     padding: 2rem;
   }
 
+  .property-card__meta {
+    grid-template-columns: 1fr;
+  }
+
+  .hero__actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hero__stats {
+    grid-template-columns: 1fr;
+  }
+
+  .sustainability {
+    padding: 2rem 1.25rem;
+  }
+
+  .testimonials {
+    gap: 1.5rem;
+  }
+
+  .cta-sticky {
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%);
+    bottom: calc(1rem + clamp(6rem, 24vw, 8.5rem));
+    width: min(100% - 2rem, 320px);
+    padding: 0.75rem;
+    background: rgba(245, 245, 240, 0.96);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-soft);
+  }
+
+  .cta-sticky .btn {
+    width: 100%;
+  }
+
   .cookie-banner {
+    width: min(100% - 2rem, 360px);
+    padding: 1.25rem;
     flex-direction: column;
     align-items: stretch;
     text-align: center;
+    gap: 1rem;
   }
 }
