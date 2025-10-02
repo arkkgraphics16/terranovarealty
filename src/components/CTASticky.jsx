@@ -15,9 +15,6 @@ const CTASticky = () => {
           Connect with TerraNova advisors for a bespoke consultation or speak with our team right away.
         </p>
         <div className="cta-sticky__actions">
-          <a className="btn" href="#contact">
-            📅 Schedule a Consultation
-          </a>
           <a className="btn btn--ghost" href="tel:+639178801122">
             📞 +63 917 880 1122
           </a>
