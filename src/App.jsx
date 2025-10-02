@@ -3,7 +3,7 @@ import Header from './components/Header.jsx';
 import Hero from './components/Hero.jsx';
 import PropertyCard from './components/PropertyCard.jsx';
 import Footer from './components/Footer.jsx';
-import CTASticky from './components/CTASticky.jsx';
+// import CTASticky from './components/CTASticky.jsx'; // removed
 import CookieBanner from './components/CookieBanner.jsx';
 import { propertiesData } from './data/propertiesData.js';
 import useSEO from './hooks/useSEO.js';
@@ -230,7 +230,7 @@ const App = () => {
         </section>
       </main>
       <Footer />
-      <CTASticky />
+      {/* <CTASticky /> */} {/* removed */}
       <CookieBanner />
     </div>
   );
